@@ -1,72 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>multipleChoiceGame</title>
-    <link rel="stylesheet" type="text/css" href="styles.css" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="styles.css" rel="stylesheet" />
+    <script defer src="script.js"></script>
+    <title>test your skill</title>
+  </head>
+  <body>
     
+      <div id="timer"></div>
+  
 
-</head>
-
-<body>
-    <header>
-        <marquee>
-            <h2>Test Your Skills!!</h2>
-        </marquee>
-
-    </header>
-    <main>
-        <h1>Test Your Skills!</h1>
-
-        <p id="scoreLink"> View last score</p>
-
-        <h2>Time:<span id="timer">8:00</span></h2>
-
-        <div style="text-align:center;">
-            <button id="start" class="Starts">Start</button>
+    <div class="container">
+      <div id="question-container" class="hide">
+        <div id="question">Question</div>
+        <div id="answer-buttons" class="btn-grid">
+          <button class="btn">Answer 1</button>
+          <button class="btn">Answer 2</button>
+          <button class="btn">Answer 3</button>
         </div>
-        <div id="quiz" style="display: none">
-
-            <div id="question"></div>
-
-            <div id="qImg"></div>
-
-            <div id="choices">
-
-                <div class="choice" id="A" onclick="checkAnswer('A')"></div>
-
-                <div class="choice" id="B" onclick="checkAnswer('B')"></div>
-
-                <div class="choice" id="C" onclick="checkAnswer('C')"></div>
-
-            </div>
-
-            <div id="timer">
-
-                <div id="counter"></div>
-
-                <div id="btimeGauge"></div>
-
-                <div id="timeGauge"></div>
-
-            </div>
-
-            <div id="progress"></div>
-
-        </div>
-
-        <div id="scoreContainer" style="display: none"></div>
-
-        </div>
-
-        <!-- <img src="https://i.pinimg.com/originals/7e/8b/58/7e8b58a010525cddbbcb52dac860153b.jpg" alt="bunnies!" -->
-
-    </main>
-</body>
-<script src="script.js"></script>
-<footer></footer>
-
+      </div>
+      <div class="con">
+        <button id="start-btn" class="start-btn btn">Start</button>
+        <button id="next-btn" class="next-btn btn hide">Next</button>
+      </div>
+    </div>
+  </body>
 </html>

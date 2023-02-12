@@ -1,24 +1,95 @@
-
-h1 {text-align: center; color: darkgreen;}
-#scoreLink { text-align: center; color: blueviolet;}
-span {
-    background-color: fuchsia; display: inline-flex;
-    height:70px;
-    width:150px;font-size: 70px;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: fantasy;
 }
 
-body {background-color: pink;}
-#start {color:darkmagenta; width:100px;height: 60px;px;
-        border-radius: 25px;
-        border: 2px solid darkmagenta ;
-        padding: 20px;
-      }
+:root {
+  --hue-neutral: 268;
+  --hue-wrong: 3;
+  --hue-correct: 99;
+}
 
-      img { 
-        border-radius: 25px;
-        border: 10px solid lavenderblush;
-        padding: 2px;
-        width: 200px;
-        height: 250px;
-      }
+body {
+  --hue: var(--hue-neutral);
+  padding: 0;
+  margin: 0;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(var(--hue), 100%, 20%);
+}
 
+.container {
+  width: 600px;
+  max-width: 75%;
+  background-color: bisque;
+  border-radius: 100px;
+  padding: 15px;
+  box-shadow: 0 0 10px 2px;
+}
+
+#timer {
+  width: 200px;
+  height: 50px;
+  max-width: 30%;
+  background-color: bisque;
+  border-radius: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 10px 2px;
+  margin-bottom: 30%;
+}
+
+body.correct {
+  --hue: var(--hue-correct);
+}
+body.wrong {
+  --hue: var(--hue-wrong);
+}
+
+.btn-grid {
+  display: grid;
+  grid-template-columns: repeat(1, auto);
+  gap: 5px;
+  margin: 10px 0;
+}
+.btn {
+  --hue: var(--hue-neutral);
+  border: 1px solid hsl(var(--hue) 100%, 30%);
+  background-color: hsl(var(--hue), 100%, 70%);
+  border-radius: 100px;
+  padding: 2px 5px;
+}
+
+.btn.correct {
+  --hue: var(--hue-correct);
+}
+.btn.wrong {
+  --hue: var(--hue-wrong);
+}
+
+.start-btn,
+.next-btn {
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 6px 6px;
+}
+
+#question {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.con {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hide {
+  display: none;
+}
