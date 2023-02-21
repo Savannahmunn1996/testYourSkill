@@ -5,6 +5,7 @@ const nextButton = document.getElementById("next-btn");
 const Qcontainer = document.getElementById("question-container");
 const questionElement = document.getElementById("question");
 const answerButton = document.getElementById("answer-buttons");
+let time = 0;
 let shuffledQ, QIndex;
 
 startButton.addEventListener("click", startQuiz);
@@ -19,17 +20,20 @@ function startTimer() {
   var presentTime = document.getElementById("timer").innerHTML;
   var timeArray = presentTime.split(/[:]+/);
   var m = timeArray[0];
-  var s = checkSecond(timeArray[1] - 1);
-  if (s == 59) {
+  time = checkSecond(timeArray[1] - 1);
+  // var s = checkSecond(timeArray[1] - 1);
+  if (time == 59) {
     m = m - 1;
   }
   if (m < 0) {
     return;
   }
 
-  document.getElementById("timer").innerHTML = m + ":" + s;
+  document.getElementById("timer").innerHTML = m + ":" + time;
   console.log(m);
+
   setTimeout(startTimer, 1000);
+  console.log(timeArray);
 }
 
 function checkSecond(sec) {
@@ -39,6 +43,7 @@ function checkSecond(sec) {
   if (sec < 0) {
     sec = "59";
   }
+  console.log(sec);
   return sec;
 }
 
@@ -99,6 +104,8 @@ function setStatusClass(element, correct) {
   if (correct) {
     element.classList.add("correct");
   } else {
+    time -= 5;
+    console.log("time penalty", time);
     element.classList.add("wrong");
   }
 }
@@ -107,6 +114,13 @@ function clearStatusClass(element) {
   element.classList.remove("correct");
   element.classList.remove("wrong");
 }
+
+// function minusTime(){
+
+// }
+
+// localStorage.setItem("score", )
+// document.getElementById("scores").innerHTML= localStorage.getItem("score")
 
 let questions = [
   {
