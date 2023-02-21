@@ -104,7 +104,6 @@ function setStatusClass(element, correct) {
   if (correct) {
     element.classList.add("correct");
   } else {
-    time -= 5;
     console.log("time penalty", time);
     element.classList.add("wrong");
   }
