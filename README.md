@@ -17,13 +17,7 @@ Simply visit the deployed link.
 
 
 ## Deployed link
-
-
-
-
-
-
-
+https://savannahmunn1996.github.io/testYourSkill/
 
 ## Criteria
 GIVEN I am taking a code quiz
