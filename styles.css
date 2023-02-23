@@ -65,6 +65,9 @@ body.wrong {
   border-radius: 100px;
   padding: 2px 5px;
 }
+#question {
+  font-size: small;
+}
 
 .btn.correct {
   --hue: var(--hue-correct);
@@ -95,8 +98,18 @@ body.wrong {
 }
 
 #score {
-color:antiquewhite;
-margin-top: 100px;
-margin-right:60px;
+  color: antiquewhite;
+  margin-top: 100px;
+  margin-right: 60px;
+}
+#user {
+  color: antiquewhite;
+}
 
+.userInitials {
+  height: 5px;
+  margin-left: 20px;
+}
+label {
+  color: antiquewhite;
 }

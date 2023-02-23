@@ -5,7 +5,9 @@ const nextButton = document.getElementById("next-btn");
 const Qcontainer = document.getElementById("question-container");
 const questionElement = document.getElementById("question");
 const answerButton = document.getElementById("answer-buttons");
-let time = 0;
+let timerArray = [];
+let score = 0;
+let initials;
 let shuffledQ, QIndex;
 
 startButton.addEventListener("click", startQuiz);
@@ -13,6 +15,11 @@ nextButton.addEventListener("click", () => {
   QIndex++;
   nextQ();
 });
+
+function logger() {
+  initials = document.getElementById("initials").value;
+  document.getElementById("user").innerText = `User: ${initials}`
+}
 
 document.getElementById("timer").innerHTML = 05 + ":" + 00;
 
@@ -33,7 +40,8 @@ function startTimer() {
   console.log(m);
 
   setTimeout(startTimer, 1000);
-  console.log(timeArray);
+  timerArray = timeArray;
+  // console.log(timerArray);
 }
 
 function checkSecond(sec) {
@@ -43,7 +51,7 @@ function checkSecond(sec) {
   if (sec < 0) {
     sec = "59";
   }
-  console.log(sec);
+  // console.log(sec);
   return sec;
 }
 
@@ -89,7 +97,23 @@ function selectAnswer(e) {
     startButton.innerText = "Restart";
     startButton.classList.remove("hide");
   }
+
+  if(!correct) {
+    score -= 1;
+    localStorage.setItem("score", score);
+    document.getElementById("score").innerText = `Score: ${score}`;
+    timerArray[1] -= 5;
+    if(timerArray[1] <= 0) {
+      timerArray[1] = (60 + timerArray[1])
+    }
+    document.getElementById("timer").innerHTML = timerArray[0] + ":" + timerArray[1];
+  } else {
+    score += 1;
+    localStorage.setItem("score", score);
+    document.getElementById("score").innerText = `Score: ${score}`;
+  }
 }
+
 
 function resetState() {
   clearStatusClass(document.body);
@@ -113,13 +137,6 @@ function clearStatusClass(element) {
   element.classList.remove("correct");
   element.classList.remove("wrong");
 }
-
-// function minusTime(){
-
-// }
-
-// localStorage.setItem("score", )
-// document.getElementById("scores").innerHTML= localStorage.getItem("score")
 
 let questions = [
   {
@@ -233,6 +250,7 @@ let questions = [
     ],
   },
 ];
+
 
 // let timer;
 // // set up a timer 8 minutes

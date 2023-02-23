@@ -1,33 +1,43 @@
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="styles.css" rel="stylesheet" />
-    <script defer src="script.js"></script>
-    <title>test your skill</title>
-  </head>
-  <body>
-    <div id="timer"></div>
 
-    <div class="container">
-      <div id="question-container" class="hide">
-        <div id="question"></div>
-        <div id="answer-buttons" class="btn-grid">
-          <button class="btn">Answer 1</button>
-          <button class="btn">Answer 2</button>
-          <button class="btn">Answer 3</button>
-        </div>
-      </div>
-      <div class="con">
-        <button id="start-btn" class="start-btn btn">Start</button>
-        <button id="next-btn" class="next-btn btn hide">Next</button>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="styles.css" rel="stylesheet" />
+  <script defer src="script.js"></script>
+  <title>test your skill</title>
+</head>
+
+<body>
+  <div class="userInitials" id="userInitials">
+    <label for="initials">Enter your initials to save your score: </label>
+    <input type="text" name="initials" id="initials" onchange="logger()">
+    <button onclick="logger()">enter</button>
+  </div>
+  <div id="timer"></div>
+
+  <div class="container">
+    <div id="question-container" class="hide">
+      <div id="question"></div>
+      <div id="answer-buttons" class="btn-grid">
+        <button class="btn">Answer 1</button>
+        <button class="btn">Answer 2</button>
+        <button class="btn">Answer 3</button>
       </div>
     </div>
-    <section >
-      <p id="score">Score:</p>
-      <p id="scores"></p>
-    </section>
-  </body>
+    <div class="con">
+      <button id="start-btn" class="start-btn btn">Start</button>
+      <button id="next-btn" class="next-btn btn hide">Next</button>
+    </div>
+  </div>
+  <section>
+    <p id="user">User: </p>
+    <p id="score">Score:</p>
+    <p id="scores"></p>
+  </section>
+</body>
+
 </html>
